@@ -6,7 +6,7 @@
 /out/
 
 # development
-.vscode/*
+.vscode
 
 # production
 /build
