@@ -1,0 +1,36 @@
+:root {
+  --red: #b65e5e;
+  --green: #5eb65e;
+  --blue: #5e5eb6;
+  --yellow: #b6b65e;
+  --white: #fff;
+  --black: #000;
+  --gray: #ccc;
+  --light-gray: #eee;
+  --dark-gray: #333;
+
+  --font-blog: "Crimson", Georgia, serif;
+  --font-code: "Fira Code", monospace;
+}
+
+html,
+body {
+  font-family: "Crimson", Georgia;
+  font-size: 20px;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}

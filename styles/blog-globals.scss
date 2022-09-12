@@ -1,0 +1,32 @@
+
+.blog-container {
+  padding: 1rem 4rem;
+  max-width: 960px;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-blog);
+    margin: 0;
+  }
+
+  h1 {
+    margin: 1.5rem 0;
+    line-height: 48px;
+    font-size: 48px;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+  h3 {
+    margin-top: 0.75rem;
+  }
+  code {
+    font-size: 14px;
+  }
+  p {
+    line-height: 1.5;
+    margin: 1rem 0 0 0;
+  }
+}
+aside.closed {
+  width: 40px !important;
+}
