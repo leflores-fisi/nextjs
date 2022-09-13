@@ -1,53 +1,54 @@
 import Image from "next/image"
 import PageLayout from "@/components/PageLayout"
 import styles from "@/styles/PageLayout.module.scss"
+import fs from "fs"
 
-export default function Home({ props, posts }) {
-
-  console.log(require("./blog/lorem.mdx"))
+export default function Home( { posts } ) {
 
   return (
     <PageLayout>
       <div className={styles.container}>
-        My personal blog
-      </div>
-      <div>
-        {
-          posts.map(post => (
-            <div key={post.id}>
-              <h3>{post.title}</h3>
-              <p>{post.description}</p>
-              <Image src={post.img} width={400} height={200} />
-            </div>
-          ))
-        }
+        <div>
+          My personal blog
+        </div>
+        <div>
+          <ul>
+            {
+              posts.map((post, index) => {
+                return (
+                  <li key={index}>
+                    <h3>{post.title}</h3>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={300}
+                      height={200}
+                    />
+                    <div>
+                      {post.description}
+                    </div>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
       </div>
     </PageLayout>
   )
 }
 
+export async function getStaticProps() {
 
-
-export function getStaticProps() {
-
-
+  const cwd = process.cwd()
+  const fileNames = fs.readdirSync(`${cwd}/pages/blog`);
+  const postModules = await Promise.all(
+    fileNames.map(async (p) => import(`../pages/blog/${p}`))
+  );
 
   return {
     props: {
-      posts : [
-        {
-          title: "How to use Next.js",
-          id: 1,
-          img: "https://themeforest.img.customer.envatousercontent.com/files/383930643/preview.__large_preview.png?auto=compress%2Cformat&q=80&fit=crop&crop=top&max-h=8000&max-w=590&s=35eaa538c3b1ebfeadf7bc76348540b5",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-        },
-        {
-          title: "How to learn Next.js",
-          id: 2,
-          img: "https://raw.githubusercontent.com/strapi/strapi-starter-next-blog/master/screenshot.png",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
-        }
-      ]
+      posts: postModules.map((m) => m.meta)
     }
   }
 }
