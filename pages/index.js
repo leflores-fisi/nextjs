@@ -1,9 +1,11 @@
-import Image from "next/image"
-import PageLayout from "@/components/PageLayout"
-import styles from "@/styles/PageLayout.module.scss"
 import fs from "fs"
+import PageLayout from "@/components/PageLayout"
+import PostView from "@/components/PostView"
+import styles from "@/styles/PageLayout.module.scss"
 
 export default function Home( { posts } ) {
+
+  console.log(posts)
 
   return (
     <PageLayout>
@@ -14,22 +16,7 @@ export default function Home( { posts } ) {
         <div>
           <ul>
             {
-              posts.map((post, index) => {
-                return (
-                  <li key={index}>
-                    <h3>{post.title}</h3>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      width={300}
-                      height={200}
-                    />
-                    <div>
-                      {post.description}
-                    </div>
-                  </li>
-                )
-              })
+              posts.map((post, i) => <PostView key={i} post={post} />)
             }
           </ul>
         </div>
@@ -41,9 +28,9 @@ export default function Home( { posts } ) {
 export async function getStaticProps() {
 
   const cwd = process.cwd()
-  const fileNames = fs.readdirSync(`${cwd}/pages/blog`);
+  const fileNames = fs.readdirSync(`${cwd}/pages/posts`);
   const postModules = await Promise.all(
-    fileNames.map(async (p) => import(`../pages/blog/${p}`))
+    fileNames.map(async (p) => import(`../pages/posts/${p}`))
   );
 
   return {
