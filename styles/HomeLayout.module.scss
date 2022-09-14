@@ -1,5 +1,29 @@
-.container {
-  display: flex;
+
+@media screen and (min-width: 1280px) {
+  .mainContainer {
+    max-width: 1280px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .mainContainer {
+    width: 88vw;
+    max-width: 1392px;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+.sectionContainer {
+  margin-top: 0.5rem;
+}
+@media screen and (min-width: 1020px) {
+  .sectionContainer {
+    display: grid;
+    grid-template-columns: 200px auto; // 220px auto
+  }
+  .sidebar {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 .header {
@@ -62,4 +86,12 @@
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+}
+
+// Posts
+.posts {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr;
+  padding: 0 2rem;
 }

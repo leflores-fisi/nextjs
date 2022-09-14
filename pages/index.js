@@ -1,27 +1,24 @@
 import fs from "fs"
-import PageLayout from "@/components/PageLayout"
-import PostView from "@/components/PostView"
-import styles from "@/styles/PageLayout.module.scss"
+import HomeLayout from "@/components/HomePage/HomeLayout"
+import styles from "@/styles/HomeLayout.module.scss"
+import LatestPosts from "@/components/HomePage/LatestPosts"
 
 export default function Home( { posts } ) {
 
   console.log(posts)
 
   return (
-    <PageLayout>
-      <div className={styles.container}>
-        <div>
-          My personal blog
-        </div>
-        <div>
-          <ul>
-            {
-              posts.map((post, i) => <PostView key={i} post={post} />)
-            }
-          </ul>
-        </div>
+    <HomeLayout>
+      <div className={styles.mainContainer}>
+        <section className={styles.sectionContainer}>
+          <section className={styles.sidebar}>
+            <h1>Posts</h1>
+            My personal blog
+          </section>
+          <LatestPosts posts={posts} />
+        </section>
       </div>
-    </PageLayout>
+    </HomeLayout>
   )
 }
 

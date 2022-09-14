@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from  "next/link";
-import styles from "@/styles/PageLayout.module.scss"
+import styles from "@/styles/HomeLayout.module.scss"
 
 export default function Header() {
   return (

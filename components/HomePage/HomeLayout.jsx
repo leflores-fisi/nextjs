@@ -1,8 +1,8 @@
 import Head from "next/head";
-import styles from "@/styles/PageLayout.module.scss"
+import styles from "@/styles/HomeLayout.module.scss"
 import Header from "@/components/Header";
 
-export default function PageLayout( { children } ) {
+export default function HomeLayout( { children } ) {
   
   return (
     < >
@@ -12,13 +12,9 @@ export default function PageLayout( { children } ) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className={styles.container}>
-        <div>
-          <main className={styles.main}>
-            { children }
-          </main>
-        </div>
-      </div>
+      <main className={styles.main}>
+        { children }
+      </main>
       <footer className={styles.footer}>
         Created by leflores
       </footer>
