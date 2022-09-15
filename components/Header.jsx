@@ -1,10 +1,27 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from  "next/link";
 import styles from "@/styles/HomeLayout.module.scss"
 
 export default function Header() {
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      const scrollHeigth = e.target.documentElement.scrollTop;
+      const scrolled = (scrollHeigth > 40);
+      setIsScrolled(scrolled);
+    };
+    document?.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document?.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled? styles.scrolled : ""}`}>
       <Link href="/">
         <a className={styles.logo}>
           <picture className={styles.imglogo}>

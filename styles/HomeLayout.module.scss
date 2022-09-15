@@ -29,10 +29,17 @@
 .header {
   display: flex;
   justify-content: space-between;
+  transition: height 0.2s ease-in-out;
   align-items: center;
   position: sticky;
   top: 0;
   padding: 8px 2rem;
+  height: 60px;
+  background-color: #fff;
+}
+.header.scrolled {
+  height: 40px;
+  margin-bottom: 20px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
