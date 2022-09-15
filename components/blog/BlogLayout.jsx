@@ -3,9 +3,9 @@ import { renderToString } from "react-dom/server";
 
 import styles from "@/styles/BlogLayout.module.scss"
 import Header from "@/components/Header";
-import MDXProvider from "@/components/MDX/ComponentsProvider";
 import Footer from "@/components/Footer";
-import BlogSidebar from "./BlogSidebar";
+import BlogSidebar from "@/components/blog/BlogSidebar";
+import MDXProvider from "@/components/MDX/ComponentsProvider";
 
 export default function BlogLayout( { children, meta } ) {
 

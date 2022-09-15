@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import styles from "@/styles/BlogLayout.module.scss"
-import TableOfContents from "@/components/TableOfContents";
+import TableOfContents from "@/components/blog/TableOfContents";
 
 export default function BlogSidebar( { meta, postTextContent } ) {
 
