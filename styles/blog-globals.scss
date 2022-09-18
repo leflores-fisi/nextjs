@@ -30,3 +30,20 @@
 aside.closed {
   width: 40px !important;
 }
+.codeblock {
+  position: relative;
+}
+.codeblock .copy-to-clipboard {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  transition: opacity 0.2s ease;
+  height: 16px;
+  opacity: 0;
+}
+.codeblock span, .codeblock button {
+  color: white;
+}
+.codeblock:hover .copy-to-clipboard {
+  opacity: 1;
+}
