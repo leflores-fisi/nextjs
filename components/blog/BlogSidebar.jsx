@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 
 import styles from "@/styles/BlogLayout.module.scss"
 import TableOfContents from "@/components/blog/TableOfContents";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 export default function BlogSidebar( { meta, postTextContent } ) {
 
   const [headings, setHeadings] = useState([]);
-  const [sidebarClosed, setSidebarClosed] = useState(false);
+  const [isClosed, setIsClosed] = useLocalStorage("post-sidebar-closed", false);
+
+  console.log(isClosed)
 
   useEffect(() => {
     const htmlHeadings = postTextContent.match(/<h.>(.*?)<\/h.>/g);
@@ -26,16 +29,16 @@ export default function BlogSidebar( { meta, postTextContent } ) {
   }, []);
 
   const handleToggle = () => {
-    setSidebarClosed(prev => !prev);
+    setIsClosed(!isClosed);
   }
 
   return (
-    <aside className={`${styles.aside} ${sidebarClosed ? "closed" : ""}`}>
+    <aside className={`${styles.aside} ${isClosed ? "closed" : ""}`}>
       <button className={styles.toggleButton} onClick={handleToggle}>
-        {(sidebarClosed ? ">>" :"<<")}
+        {(isClosed ? ">>" :"<<")}
       </button>
       {
-        (headings.length > 0 && !sidebarClosed) &&
+        (headings.length > 0 && !isClosed) &&
         <TableOfContents title={meta.title} headings={headings} />
       }
     </aside>
