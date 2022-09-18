@@ -20,7 +20,7 @@
     margin-top: 0.75rem;
   }
   code {
-    font-size: 14px;
+    background-color: unset !important; // conflicts with prism
   }
   p {
     line-height: 1.5;

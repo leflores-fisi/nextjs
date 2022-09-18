@@ -4,12 +4,12 @@ import styles from "@/styles/BlogLayout.module.scss"
 import TableOfContents from "@/components/blog/TableOfContents";
 import useLocalStorage from "@/hooks/useLocalStorage";
 
+const STATUS_KEY = "post-sidebar-closed";
+
 export default function BlogSidebar( { meta, postTextContent } ) {
 
   const [headings, setHeadings] = useState([]);
-  const [isClosed, setIsClosed] = useLocalStorage("post-sidebar-closed", false);
-
-  console.log(isClosed)
+  const [isClosed, setIsClosed] = useLocalStorage(STATUS_KEY, false);
 
   useEffect(() => {
     const htmlHeadings = postTextContent.match(/<h.>(.*?)<\/h.>/g);
