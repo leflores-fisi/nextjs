@@ -13,11 +13,15 @@
   --font-code: "Fira Code", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   font-family: "Crimson", Georgia;
   font-size: 20px;
 }
+
 
 button {
   background: none;

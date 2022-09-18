@@ -16,7 +16,6 @@ export default function CopyContentButton( {content} ) {
     }
   }
 
-  if (!navigator.clipboard) return null;
   return (
     <div className="copy-to-clipboard" onClick={handleCopy}>
       {
