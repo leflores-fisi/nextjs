@@ -1,6 +1,6 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import CopyContentButton from "../blog/CopyContentButton";
+import CopyContentButton from "@/components/blog/CopyContentButton";
 
 export default function CodeBlock (props) {
 

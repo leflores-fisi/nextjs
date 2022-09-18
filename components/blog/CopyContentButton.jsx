@@ -1,25 +1,29 @@
 import { useState } from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
 
 export default function CopyContentButton( {content} ) {
   const [copied, setCopied] = useState(false);
   
-  const handleCopy = () => {
-    setCopied(true);
-    window.setTimeout(() => {
-      setCopied(false);
-    }, 2000);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(content);
+      setCopied(true);
+      window.setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    }
+    catch (error) {
+      window.alert("Failed to copy");
+    }
   }
 
+  if (!navigator.clipboard) return null;
   return (
-    <CopyToClipboard text={content} onCopy={handleCopy}>
-      <div className="copy-to-clipboard">
-        {
-          copied ?
-          <span>Copied!</span> :
-          <button>Copy</button>
-        }
-      </div>
-    </CopyToClipboard>
+    <div className="copy-to-clipboard" onClick={handleCopy}>
+      {
+        copied ?
+        <span>Copied!</span> :
+        <button>Copy</button>
+      }
+    </div>
   );
 }
