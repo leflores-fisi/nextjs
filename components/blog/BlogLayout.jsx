@@ -28,8 +28,8 @@ export default function BlogLayout( { children, meta } ) {
               <div className={styles.tags}>
                 <ul>
                   {
-                    meta.tags.map(tag => (
-                      <li>
+                    meta.tags.map((tag, index) => (
+                      <li key={index}>
                         <span className={styles.tag} key={tag}>{tag}</span>
                       </li>
                     ))
