@@ -1,4 +1,4 @@
-import HomeLayout from "@/components/HomePage/HomeLayout";
+import HomeLayout from '@/components/HomePage/HomeLayout';
 
 export default function About() {
   return (
@@ -8,5 +8,5 @@ export default function About() {
         <p>Sobre mi</p>
       </div>
     </HomeLayout>
-  )
+  );
 }

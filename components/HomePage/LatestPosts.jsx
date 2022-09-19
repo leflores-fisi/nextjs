@@ -1,5 +1,5 @@
-import PostView from "@/components/HomePage/PostView"
-import styles from "@/styles/HomeLayout.module.scss"
+import PostView from '@/components/HomePage/PostView';
+import styles from '@/styles/HomeLayout.module.scss';
 
 export default function LatestPosts({ posts }) {
   return (

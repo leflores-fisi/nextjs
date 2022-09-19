@@ -1,8 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function PostView({ post }) {
-
   return (
     <li key={post.title}>
       <Link href={`/posts/${post.slug}`}>

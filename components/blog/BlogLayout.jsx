@@ -1,14 +1,13 @@
-import Head from "next/head";
-import { renderToString } from "react-dom/server";
+import Head from 'next/head';
+import { renderToString } from 'react-dom/server';
 
-import styles from "@/styles/BlogLayout.module.scss"
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import BlogSidebar from "@/components/blog/BlogSidebar";
-import MDXProvider from "@/components/MDX/ComponentsProvider";
+import styles from '@/styles/BlogLayout.module.scss';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import BlogSidebar from '@/components/blog/BlogSidebar';
+import MDXProvider from '@/components/MDX/ComponentsProvider';
 
-export default function BlogLayout( { children, meta } ) {
-
+export default function BlogLayout({ children, meta }) {
   return (
     < >
       <Head>
@@ -47,5 +46,5 @@ export default function BlogLayout( { children, meta } ) {
         </div>
       </div>
     </>
-  )
+  );
 }

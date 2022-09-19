@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-export default function CopyContentButton( {content} ) {
+export default function CopyContentButton({ content }) {
   const [copied, setCopied] = useState(false);
-  
+
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(content);
@@ -10,19 +10,23 @@ export default function CopyContentButton( {content} ) {
       window.setTimeout(() => {
         setCopied(false);
       }, 2000);
+    } catch (error) {
+      // eslint-disable-next-line no-alert
+      window.alert('Failed to copy');
     }
-    catch (error) {
-      window.alert("Failed to copy");
-    }
-  }
+  };
 
   return (
-    <div className="copy-to-clipboard" onClick={handleCopy}>
+    <button
+      className="copy-to-clipboard"
+      onClick={handleCopy}
+      type="button"
+    >
       {
-        copied ?
-        <span>Copied!</span> :
-        <button>Copy</button>
+        copied
+          ? <span>Copied!</span>
+          : <span>Copy</span>
       }
-    </div>
+    </button>
   );
 }

@@ -1,7 +1,7 @@
-import { MDXProvider } from "@mdx-js/react";
-import ResponsiveImage from "@/components/MDX/ResponsiveImage";
-import CodeBlock from "@/components/MDX/CodeBlock";
-import { Heading2, Heading3, Heading4 } from "@/components/MDX/Headings"; 
+import { MDXProvider } from '@mdx-js/react';
+import ResponsiveImage from '@/components/MDX/ResponsiveImage';
+import CodeBlock from '@/components/MDX/CodeBlock';
+import { Heading2, Heading3, Heading4 } from '@/components/MDX/Headings';
 
 const components = {
   img: ResponsiveImage,
@@ -14,9 +14,10 @@ const components = {
   // code: InlineCode,
 };
 
-export default function MDXComponentsProvider({ props, children }) {
+export default function MDXComponentsProvider({ children }) {
   return (
-    <MDXProvider components={components}>{children}
+    <MDXProvider components={components}>
+      {children}
     </MDXProvider>
   );
 }

@@ -1,9 +1,8 @@
-import Head from "next/head";
-import styles from "@/styles/HomeLayout.module.scss"
-import Header from "@/components/Header";
+import Head from 'next/head';
+import styles from '@/styles/HomeLayout.module.scss';
+import Header from '@/components/Header';
 
-export default function HomeLayout( { children } ) {
-  
+export default function HomeLayout({ children }) {
   return (
     < >
       <Head>
@@ -19,5 +18,5 @@ export default function HomeLayout( { children } ) {
         Created by leflores
       </footer>
     </>
-  )
+  );
 }

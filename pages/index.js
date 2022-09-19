@@ -1,12 +1,9 @@
-import fs from "fs"
-import HomeLayout from "@/components/HomePage/HomeLayout"
-import styles from "@/styles/HomeLayout.module.scss"
-import LatestPosts from "@/components/HomePage/LatestPosts"
+import fs from 'fs';
+import HomeLayout from '@/components/HomePage/HomeLayout';
+import styles from '@/styles/HomeLayout.module.scss';
+import LatestPosts from '@/components/HomePage/LatestPosts';
 
-export default function Home( { posts } ) {
-
-  console.log(posts)
-
+export default function Home({ posts }) {
   return (
     <HomeLayout>
       <div className={styles.mainContainer}>
@@ -19,20 +16,19 @@ export default function Home( { posts } ) {
         </section>
       </div>
     </HomeLayout>
-  )
+  );
 }
 
 export async function getStaticProps() {
-
-  const cwd = process.cwd()
+  const cwd = process.cwd();
   const fileNames = fs.readdirSync(`${cwd}/pages/posts`);
   const postModules = await Promise.all(
-    fileNames.map(async (p) => import(`../pages/posts/${p}`))
+    fileNames.map(async (p) => import(`../pages/posts/${p}`)),
   );
 
   return {
     props: {
-      posts: postModules.map((m) => m.meta)
-    }
-  }
+      posts: postModules.map((m) => m.meta),
+    },
+  };
 }

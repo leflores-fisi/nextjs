@@ -1,3 +1,28 @@
 {
-  "extends": "next/core-web-vitals"
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "next/core-web-vitals",
+        "plugin:@next/next/recommended"
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["."]
+            },
+            "jsconfig": {
+                "config": "jsconfig.json"
+            }
+        }
+    },
+    "rules": {
+        "react/jsx-filename-extension": "off",
+        "react/no-array-index-key": "off",
+        // see https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/402
+        "jsx-a11y/anchor-is-valid": ["error", {
+            "components": ["Link"],
+            "specialLink": ["hrefLeft", "hrefRight"],
+            "aspects": ["invalidHref", "preferButton"]
+        }]
+    }
 }

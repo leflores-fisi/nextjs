@@ -1,16 +1,14 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from 'react';
 
 export default function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(initialValue);
 
   useLayoutEffect(() => {
     try {
-      if (typeof window === "undefined") return initialValue;
       const item = window.localStorage.getItem(key);
       setStoredValue(JSON.parse(item) ?? initialValue);
-    }
-    catch (error) {
-      console.error("Error at hook useLocalStorage:", error);
+    } catch (error) {
+      console.error('Error at hook useLocalStorage:', error);
       setStoredValue(initialValue);
     }
   }, []);
@@ -19,9 +17,9 @@ export default function useLocalStorage(key, initialValue) {
     try {
       setStoredValue(valueToStore);
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
-      console.log("Setting value to localStorage:", valueToStore);
+      console.log('Setting value to localStorage:', valueToStore);
     } catch (error) {
-      console.error("Error at hook useLocalStorage:", error);
+      console.error('Error at hook useLocalStorage:', error);
     }
   };
 
