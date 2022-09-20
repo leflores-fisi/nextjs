@@ -1,20 +1,18 @@
 import fs from 'fs';
 import HomeLayout from '@/components/HomePage/HomeLayout';
-import styles from '@/styles/HomeLayout.module.scss';
 import LatestPosts from '@/components/HomePage/LatestPosts';
+import styles from '@/styles/HomeLayout.module.scss';
 
 export default function Home({ posts }) {
   return (
     <HomeLayout>
-      <div className={styles.mainContainer}>
-        <section className={styles.sectionContainer}>
-          <section className={styles.sidebar}>
-            <h1>Posts</h1>
-            My personal blog
-          </section>
-          <LatestPosts posts={posts} />
+      <section className={styles.sectionContainer}>
+        <section className={styles.sidebar}>
+          <h1>Posts</h1>
+          My personal blog
         </section>
-      </div>
+        <LatestPosts posts={posts} />
+      </section>
     </HomeLayout>
   );
 }

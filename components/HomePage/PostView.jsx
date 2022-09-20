@@ -3,14 +3,21 @@ import Link from 'next/link';
 
 export default function PostView({ post }) {
   return (
-    <li key={post.title}>
+    <article key={post.title}>
       <Link href={`/posts/${post.slug}`}>
-        <a>
+        <a
+          className="post-view-item"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <Image
             src={post.image}
             alt={post.title}
-            width={300}
-            height={200}
+            objectFit="cover"
+            width={526}
+            height={296}
           />
           <h3>{post.title}</h3>
           <div>
@@ -18,6 +25,6 @@ export default function PostView({ post }) {
           </div>
         </a>
       </Link>
-    </li>
+    </article>
   );
 }

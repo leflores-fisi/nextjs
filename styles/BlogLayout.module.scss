@@ -1,3 +1,11 @@
+
+@media screen and (min-width: 768px) {
+  .blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
 .container {
   display: flex;
 }

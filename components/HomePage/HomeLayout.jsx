@@ -11,7 +11,7 @@ export default function HomeLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={styles.main}>
+      <main className={styles.mainContainer}>
         { children }
       </main>
       <footer className={styles.footer}>
