@@ -1,4 +1,4 @@
-import styles from '@/styles/BlogLayout.module.scss';
+import styles from '@/styles/Blog/PostSidebar.module.scss';
 
 export default function TableOfContents({ title, headings }) {
   return (

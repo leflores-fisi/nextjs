@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import styles from '@/styles/BlogLayout.module.scss';
-import TableOfContents from '@/components/blog/TableOfContents';
+import TableOfContents from '@/components/Blog/TableOfContents';
 import useLocalStorage from '@/hooks/useLocalStorage';
+import styles from '@/styles/Blog/PostSidebar.module.scss';
 
 const STATUS_STORAGE_KEY = 'post-sidebar-closed';
 
@@ -31,8 +31,12 @@ export default function BlogSidebar({ meta, postTextContent }) {
   };
 
   return (
-    <aside className={`${styles.aside} ${isClosed ? 'closed' : ''}`}>
-      <button type="button" className={styles.toggleButton} onClick={handleToggle}>
+    <aside className={`${styles.aside} ${isClosed ? styles.closed : ''}`}>
+      <button
+        type="button"
+        className={styles.toggleButton}
+        onClick={handleToggle}
+      >
         {(isClosed ? '>>' : '<<')}
       </button>
       {

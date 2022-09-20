@@ -1,7 +1,13 @@
-
-.blog-container {
-  padding: 1rem 4rem;
-  max-width: 960px;
+.blog-wrapper {
+  display: flex;
+  
+  .blog-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 4rem;
+    max-width: var(--blog-width);;
+    width: var(--blog-width);
+  }
 
   h1, h2, h3, h4, h5, h6 {
     position: relative;
@@ -50,7 +56,4 @@
   .codeblock:hover .copy-to-clipboard {
     opacity: 1;
   }
-}
-aside.closed {
-  width: 40px;
 }

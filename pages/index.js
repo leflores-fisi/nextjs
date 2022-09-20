@@ -1,7 +1,7 @@
 import fs from 'fs';
 import HomeLayout from '@/components/HomePage/HomeLayout';
 import LatestPosts from '@/components/HomePage/LatestPosts';
-import styles from '@/styles/HomeLayout.module.scss';
+import styles from '@/styles/Home/HomeLayout.module.scss';
 
 export default function Home({ posts }) {
   return (

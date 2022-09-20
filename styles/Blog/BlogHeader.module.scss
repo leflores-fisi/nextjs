@@ -1,0 +1,43 @@
+@media screen and (min-width: 600px) {
+  .header {
+    width: 88vw;
+    max-width: var(--blog-width);
+    padding: 0;
+  }
+}
+.header {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  top: 0;
+  height: 60px;
+  margin: 0 auto;
+  transition: height 0.2s ease-in-out;
+  z-index: 9999;
+}
+// Header resize on scroll down
+.header.scrolled {
+  height: 40px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+
+  picture {
+    display: flex;
+    align-items: center;
+  }
+  .imglogo {
+    margin-right: .5rem;
+  }
+  .textlogo {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+  }
+}

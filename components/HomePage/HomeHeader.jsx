@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '@/styles/HomeLayout.module.scss';
+import styles from '@/styles/Home/HomeHeader.module.scss';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);

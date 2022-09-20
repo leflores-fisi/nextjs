@@ -9,10 +9,11 @@
   --light-gray: #eee;
   --dark-gray: #333;
 
+  --blog-width: 860px;
+
   --font-blog: "Crimson", Georgia, serif;
   --font-code: "Fira Code", monospace;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -21,20 +22,18 @@ body {
   font-family: "Crimson", Georgia;
   font-size: 20px;
 }
-
-
 button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: white;
+//     background: black;
+//   }
+// }

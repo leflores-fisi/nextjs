@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import styles from '@/styles/HomeLayout.module.scss';
-import Header from '@/components/Header';
+import Header from '@/components/HomePage/HomeHeader';
+import styles from '@/styles/Home/HomeLayout.module.scss';
 
 export default function HomeLayout({ children }) {
   return (
@@ -11,12 +11,14 @@ export default function HomeLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={styles.mainContainer}>
-        { children }
-      </main>
-      <footer className={styles.footer}>
-        Created by leflores
-      </footer>
+      <div className={`home-container ${styles.container}`}>
+        <main className={styles.mainContainer}>
+          { children }
+        </main>
+        <footer className={styles.footer}>
+          Created by leflores
+        </footer>
+      </div>
     </>
   );
 }
