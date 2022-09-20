@@ -7,8 +7,8 @@ export default function TableOfContents({ title, headings }) {
       <ol>
         {
           headings.length
-          && headings.map((heading, index) => (
-            <Heading heading={heading} key={index} />
+          && headings.map((props, index) => (
+            <Heading headingProps={props} key={index} />
           ))
         }
       </ol>
@@ -16,8 +16,8 @@ export default function TableOfContents({ title, headings }) {
   );
 }
 
-function Heading({ heading }) {
-  const { id, level, text } = heading;
+function Heading({ headingProps }) {
+  const { id, level, text } = headingProps;
 
   return (
     <li>

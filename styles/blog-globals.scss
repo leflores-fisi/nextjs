@@ -13,8 +13,23 @@
     position: relative;
     font-family: var(--font-blog);
     margin: 0;
-  }
 
+    a::before {
+      position: absolute;
+      color: var(--red);
+      left: -48px;
+      width: 48px;
+      content: "§";
+      transition: opacity 0.1s ease;
+      text-align: center;
+      opacity: 0;
+    }
+    a:hover {
+      &::before {
+        opacity: 0.7;
+      }
+    }
+  }
   h1 {
     margin: 0.5rem 0 1.5rem 0;
     line-height: 48px;
